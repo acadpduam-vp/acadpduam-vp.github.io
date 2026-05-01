@@ -3,54 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDUAM Amjonga - Academic Portal</title>
+    <title>PDUAM Amjonga Academic Repository</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-        header { background-color: #003366; color: white; padding: 20px 5%; display: flex; align-items: center; }
-        header img { width: 100px; height: auto; border-radius: 50%; margin-right: 30px; }
-        .header-text { text-align: left; }
-        nav { background-color: #f4f4f4; border-bottom: 1px solid #ccc; }
-        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav ul li { margin: 0; }
-        nav ul li a { display: block; padding: 15px 20px; text-decoration: none; color: #333; font-weight: bold; }
-        nav ul li a:hover { background-color: #ddd; color: #003366; }
-        .container { max-width: 1000px; margin: 20px auto; padding: 0 20px; }
-        .footer { background-color: #333; color: white; text-align: center; padding: 10px 0; margin-top: 40px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f3f3; margin: 0; padding: 20px; }
+        .header { margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 15px; display: flex; align-items: center; }
+        .header img { width: 50px; height: auto; border-radius: 50%; margin-right: 15px; }
+        .header h1 { margin: 0; color: #333; font-size: 24px; font-weight: normal; }
+        
+        /* Grid Layout like Windows Explorer */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 20px; }
+        
+        /* The Square Buttons */
+        .file-btn { 
+            background-color: white; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            padding: 20px 10px; 
+            text-align: center; 
+            text-decoration: none; 
+            color: #333; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+        }
+        
+        .file-btn:hover { background-color: #e5f3ff; border-color: #cce8ff; transform: translateY(-2px); }
+        
+        /* The Icon inside the button */
+        .icon { font-size: 40px; margin-bottom: 10px; }
+        
+        /* The Text inside the button */
+        .file-name { font-size: 13px; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
     </style>
 </head>
 <body>
 
-        <header>
-        <img src="pduam_logo_circular.png" alt="PDUAM Amjonga Logo">
-        <h1>Pandit Deendayal Upadhyaya Adarsha Mahavidyalaya</h1>
-        <h2>Amjonga, Assam</h2>
-    </header>
+    <div class="header">
+        <img src="pduam_logo_circular.png" alt="Logo">
+        <h1>PDUAM Amjonga Academic Repository</h1>
+    </div>
 
-        <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="departments.html">Departments</a></li>
-            <li><a href="academics.html">Academics</a></li>
-            <li><a href="notices.html">Notices</a></li>
-            <li><a href="students.html">Student Corner</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h3>Welcome to Our Academic Portal</h3>
-        <p>This platform has been developed to support timely dissemination of academic information and to provide essential academic resources for students and faculty of PDUAM Amjonga.</p>
+    <div class="grid-container">
         
-        <h3>Latest Announcements</h3>
-        <ul>
-            <li><strong>Upcoming:</strong> End Semester Examinations Schedule will be published soon.</li>
-            <li><strong>Notice:</strong> Online Admission Portal for the new session is now active.</li>
-            <li><strong>New Notice:</strong> <a href="https://drive.google.com/file/d/1uAFsVQWU5xgdmXUvGznu43cQNuHVRWml/view" target="_blank">Click here to view the latest notice</a></li>
-        </ul>
-       <div class="footer">
-        <p style="font-size: 14px; margin-bottom: 10px; padding: 0 20px;">
-            <strong>Disclaimer:</strong> This Academic Portal is maintained for internal educational and administrative support. For all official announcements, admissions, and other official purposes, please visit the official PDUAM Amjonga website at <a href="https://www.pduamamjonga.ac.in" target="_blank" style="color: #add8e6; text-decoration: underline;">www.pduamamjonga.ac.in</a>.
-        </p>
-        <p style="font-size: 14px; margin-top: 0;">&copy; 2026 PDUAM Amjonga Academic Portal.</p>
+        <!-- FOLDER EXAMPLE -->
+        <a href="PASTE_GOOGLE_DRIVE_FOLDER_LINK_HERE" target="_blank" class="file-btn">
+            <span class="icon">📁</span>
+            <span class="file-name">Notices 2026</span>
+        </a>
+
+        <!-- PDF FILE EXAMPLE -->
+        <a href="PASTE_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="file-btn">
+            <span class="icon">📄</span>
+            <span class="file-name">Exam Schedule.pdf</span>
+        </a>
+
+        <!-- EXCEL/SHEET EXAMPLE -->
+        <a href="PASTE_GOOGLE_SHEET_LINK_HERE" target="_blank" class="file-btn">
+            <span class="icon">📊</span>
+            <span class="file-name">Student Data.xlsx</span>
+        </a>
+
     </div>
 
 </body>
