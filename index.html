@@ -25,7 +25,6 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            /* 3D Shadow Effect */
             box-shadow: 4px 4px 10px rgba(0,0,0,0.1), -4px -4px 10px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(255,255,255,0.9);
             transition: all 0.2s ease-in-out;
         }
@@ -54,31 +53,48 @@
 
     <div class="grid-container">
         
-        <!-- FOLDER EXAMPLE -->
+        <!-- BUTTON 1: NORMAL (No password) -->
         <a href="https://drive.google.com/drive/folders/1EuL8ngIFfO00dcdZu0aGF3tWyHcaDv6y?usp=drive_link" target="_blank" class="file-btn">
              <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" class="icon-img" alt="Folder">
             <span class="file-name">Notices Board</span>
         </a>
 
-        <!-- PDF FILE EXAMPLE -->
+        <!-- BUTTON 2: NORMAL (No password) -->
         <a href="https://drive.google.com/drive/folders/1s7ttWIPCi9y9R84zuPhCEiKCGnY0izoE" target="_blank" class="file-btn">
              <img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" class="icon-img" alt="PDF">
             <span class="file-name">Class Routine</span>
         </a>
 
-        <!-- EXCEL/SHEET EXAMPLE -->
+        <!-- BUTTON 3: NORMAL (No password) -->
         <a href="https://drive.google.com/drive/folders/12xhF9wvhNuN1O5DM9Rpzs_DoiGqdG2ST" target="_blank" class="file-btn">
              <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" class="icon-img" alt="Folder">
             <span class="file-name">Important Documents</span>
         </a>
-        
-         <!-- FOLDER EXAMPLE -->
-        <a href="https://drive.google.com/drive/folders/1Bc4jBAB5SMVXM7A_W-nDpHOn5kjj6h45" target="_blank" class="file-btn">
-             <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" class="icon-img" alt="Folder">
-            <span class="file-name">Zone Documents</span>
+
+        <!-- BUTTON 4: NEW SECURE BUTTON (Requires password) -->
+        <a href="#" onclick="checkPassword(event, 'https://docs.google.com/forms/d/e/1FAIpQLSc5UGVzhp3Z0N0aDWTKTR5jpm9E1ri0_2Gkp78OE7caikJ4Hw/formResponse')" class="file-btn">
+             <img src="https://cdn-icons-png.flaticon.com/512/2913/2913133.png" class="icon-img" alt="Secure">
+            <span class="file-name">Confidential Files</span>
         </a>
 
     </div>
+
+    <!-- THIS SCRIPT MAKES THE PASSWORD WORK -->
+    <script>
+        function checkPassword(event, url) {
+            event.preventDefault(); // Stops the button from opening immediately
+            
+            // Ask for the password
+            var password = prompt("This section is restricted. Please enter the password:");
+            
+            // If they type pduam123, open the link. Otherwise, show an error.
+            if (password === "Puku@135#79") {
+                window.open(url, '_blank');
+            } else if (password !== null) {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+    </script>
 
 </body>
 </html>
