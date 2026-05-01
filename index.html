@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDUAM Amjonga Academic Repository</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f3f3f3; margin: 0; padding: 20px; }
-        .header { margin-bottom: 30px; border-bottom: 2px solid #ccc; padding-bottom: 15px; display: flex; align-items: center; }
-        .header img { width: 50px; height: auto; border-radius: 50%; margin-right: 15px; }
-        .header h1 { margin: 0; color: #333; font-size: 24px; font-weight: normal; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #eef2f5; margin: 0; padding: 20px; }
+        .header { margin-bottom: 40px; border-bottom: 3px solid #003366; padding-bottom: 15px; display: flex; align-items: center; }
+        .header img.logo { width: 60px; height: auto; border-radius: 50%; margin-right: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .header h1 { margin: 0; color: #003366; font-size: 26px; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
         
-        /* Grid Layout like Windows Explorer */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 20px; }
+        /* Grid Layout */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 25px; }
         
-        /* The Square Buttons */
+        /* The 3D Buttons */
         .file-btn { 
-            background-color: white; 
-            border: 1px solid #ddd; 
-            border-radius: 5px; 
+            background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+            border: 1px solid #d1d9e6; 
+            border-radius: 12px; 
             padding: 20px 10px; 
             text-align: center; 
             text-decoration: none; 
@@ -25,23 +25,30 @@
             display: flex; 
             flex-direction: column; 
             align-items: center; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: all 0.2s;
+            /* 3D Shadow Effect */
+            box-shadow: 4px 4px 10px rgba(0,0,0,0.1), -4px -4px 10px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(255,255,255,0.9);
+            transition: all 0.2s ease-in-out;
         }
         
-        .file-btn:hover { background-color: #e5f3ff; border-color: #cce8ff; transform: translateY(-2px); }
+        /* 3D Press-down effect when hovering/clicking */
+        .file-btn:hover { 
+            transform: translateY(3px); 
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1), -2px -2px 5px rgba(255,255,255,0.8), inset 1px 1px 2px rgba(255,255,255,0.9); 
+            border-color: #add8e6;
+        }
         
-        /* The Icon inside the button */
-        .icon { font-size: 40px; margin-bottom: 10px; }
+        /* The 3D Image Icons */
+        .icon-img { width: 55px; height: 55px; margin-bottom: 12px; filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.15)); transition: transform 0.2s; }
+        .file-btn:hover .icon-img { transform: scale(1.05); }
         
-        /* The Text inside the button */
-        .file-name { font-size: 13px; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        /* Text formatting */
+        .file-name { font-size: 13px; font-weight: 600; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <img src="pduam_logo_circular.png" alt="Logo">
+        <img src="pduam_logo_circular.png" alt="Logo" class="logo">
         <h1>PDUAM Amjonga Academic Repository</h1>
     </div>
 
@@ -49,19 +56,19 @@
         
         <!-- FOLDER EXAMPLE -->
         <a href="https://drive.google.com/drive/folders/1EuL8ngIFfO00dcdZu0aGF3tWyHcaDv6y?usp=drive_link" target="_blank" class="file-btn">
-            <span class="icon">📁</span>
+             <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" class="icon-img" alt="Folder">
             <span class="file-name">Notices Board</span>
         </a>
 
         <!-- PDF FILE EXAMPLE -->
         <a href="https://drive.google.com/drive/folders/1s7ttWIPCi9y9R84zuPhCEiKCGnY0izoE" target="_blank" class="file-btn">
-            <span class="icon">📄</span>
+             <img src="https://cdn-icons-png.flaticon.com/512/3143/3143460.png" class="icon-img" alt="PDF">
             <span class="file-name">Class Routine</span>
         </a>
 
         <!-- EXCEL/SHEET EXAMPLE -->
         <a href="https://drive.google.com/drive/folders/12xhF9wvhNuN1O5DM9Rpzs_DoiGqdG2ST" target="_blank" class="file-btn">
-            <span class="icon">📊</span>
+             <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" class="icon-img" alt="Folder">
             <span class="file-name">Important Documents</span>
         </a>
 
