@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulations &amp; Quizzes — Physics with HPG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="19" stroke="#a8791f" stroke-width="1.4"/>
+      <path d="M4 22c3-9 6-9 9 0s6 9 9 0 6-9 9 0 4 5 5 4" stroke="#1b2740" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+    </svg>
+    <span class="brand-text">Physics <em>with HPG</em></span>
+  </a>
+  <nav class="mainnav">
+    <a href="index.html">Home</a>
+    <a href="lecture-notes.html">Lecture Notes</a>
+    <a href="assignments.html">Assignments</a>
+    <a href="ebooks.html">E-Books</a>
+    <a href="previous-papers.html">Previous Papers</a>
+    <a href="simulations.html" aria-current="page">Simulations &amp; Quizzes</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" style="padding-bottom: 1rem;">
+    <div class="wrap">
+      <p class="eyebrow">SIMULATIONS &amp; QUIZZES</p>
+      <h1>See it, then test yourself on it</h1>
+      <p class="lede">A live simple-pendulum simulation you can tune, followed by a short self-check quiz on the same idea — simple harmonic motion.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Simple pendulum</h2>
+      <p>Change the length and the starting angle, then run the simulation. Notice how the period depends on length but — for small angles — not on the amplitude.</p>
+
+      <div class="sim-panel">
+        <div class="sim-layout">
+          <canvas id="pendulumCanvas" width="480" height="360" role="img" aria-label="Animated simple pendulum simulation"></canvas>
+          <div class="controls">
+            <label for="lengthRange">Length (L): <span id="lengthVal" class="readout">1.0 m</span></label>
+            <input type="range" id="lengthRange" min="0.3" max="2.5" step="0.1" value="1.0">
+
+            <label for="angleRange">Starting angle (θ₀): <span id="angleVal" class="readout">25°</span></label>
+            <input type="range" id="angleRange" min="5" max="60" step="1" value="25">
+
+            <p class="readout" style="margin-top:1rem;">Period T = 2π√(L/g) ≈ <span id="periodVal">2.01</span> s</p>
+
+            <button class="btn" id="toggleBtn" type="button">Pause</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Quick check — simple harmonic motion</h2>
+      <p>Five questions. Your score is kept only in this browser tab.</p>
+
+      <div class="quiz-card" id="quizCard">
+        <p class="quiz-progress" id="quizProgress">Question 1 of 5</p>
+        <p class="quiz-q" id="quizQuestion"></p>
+        <ul class="quiz-options" id="quizOptions"></ul>
+        <p class="quiz-feedback" id="quizFeedback"></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Dr. Hari Prasad Goutam</h2>
+      <p class="role">Assistant Professor, Department of Physics, PDUAM Amjonga</p>
+      <dl>
+        <dt>PHONE</dt><dd>+91 70023 18878</dd>
+        <dt>EMAIL</dt><dd><a href="mailto:h9783205@gmail.com">h9783205@gmail.com</a></dd>
+        <dt>PROFILE</dt><dd><a href="#">Profile and Publications</a></dd>
+      </dl>
+    </div>
+    <p class="foot-note">Add more simulations or quizzes by copying the pattern in js/pendulum.js or js/quiz.js.</p>
+  </div>
+</footer>
+
+<script src="js/pendulum.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
